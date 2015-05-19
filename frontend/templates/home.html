@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container animations">
+
+        <div class="background"></div>
+        <canvas class="back canvas full"></canvas>
+
+        <div class="foreground"></div>
+        <canvas class="front canvas full"></canvas>
+
+        <div class="modules ui">
+            <!-- All UI modules go here -->
+
+            <div class="module name text box page-start">
+                <h1>Justin Iso</h1>
+
+                <p>Hi there! I am an NYC-based software engineer and amateur pastry chef. I work as a quality engineer for <a title="Shapeways" href="http://shapeways.com">Shapeways</a>, developing our automated testing framework and building a testing culture. If you would like to get in touch (or if you need a great strawberry mousse recipe), you can reach me via: &nbsp;&nbsp;
+                <a href="https://github.com/justiniso" target="_blank">Github</a> |
+                <a href="http://www.linkedin.com/in/justiniso" target="_blank">LinkedIn</a> |
+                <a href="https://twitter.com/justiniso" target="_blank">Twitter</a>
+                </p>
+            </div>
+
+            <!-- Door Module -->
+            <div class="module doors">
+                <div class="door top"></div>
+                <div class="door bottom"></div>
+            </div>
+
+            <!-- Cursor Module -->
+            <div class="module cursors">
+                <div class="cursor"></div>
+                <div class="cursor click"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

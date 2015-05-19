@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{% block title %}Justin Iso{% endblock %}</title>
+    <meta name="Author" content="Justin Iso" />
+    <meta name="Publisher" content="Justin Iso" />
+    <meta name="Copyright" content="Justin Iso" />
+    <meta name="Description" content="Justin Iso -- Software Engineer in New York City"/>
+    <meta name="Language" content="en" />
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700,200,300,600,900' rel='stylesheet' type='text/css'>
+    {% assets "css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+    {% assets "js" %}
+        <script src="{{ ASSET_URL }}" type="text/javascript"></script>
+    {% endassets %}
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-16432813-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    </script>
+
+</body>
+
+</html>
