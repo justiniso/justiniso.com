@@ -1,0 +1,389 @@
+/*
+
+
+
+
+
+
+Z-INDICES
+
+0 - background
+500 - background modules
+1000 - foreground (the grid)
+1500 - cursors
+2000 - UI modules
+5000+ - doors
+
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+}
+
+body {
+	line-height: 1.3;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* #FONT STACK */
+body {
+	overflow: hidden;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 96px;
+	color: rgb(95,95,95);
+	margin: 0 0 25px 0;
+}
+
+h2, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	color: rgb(100,100,100);
+	margin: 0 0 5px 0;
+}
+
+h2 { font-size: 72px; margin: 0 0 20px 0; }
+h3 { font-size: 64px; }
+h4 { font-size: 48px; }
+h5 { font-size: 32px; }
+h6 { font-size: 20px; }
+
+p, span, li, td {
+	font-weight: 400;
+	font-size: 16px;
+	color: rgb(110,110,110);
+}
+
+p {
+	margin: 0 0 5px 0;
+}
+
+a {
+	color: rgb(146,171,179);
+}
+
+a:visited {
+	color: rgb(146,152,179)
+}
+
+.text.box {
+	padding: 10px 20px;
+
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+
+	background-color: rgba(236, 236, 236, 0.6);
+	-moz-box-shadow: 0 0 30px rgba(236, 236, 236, 1);
+	-webkit-box-shadow: 0 0 30px rgba(236, 236, 236, 1);
+	box-shadow: 0 0 30px rgba(236, 236, 236, 1);
+}
+
+.container {
+	overflow: hidden;
+}
+
+canvas.full {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+canvas.front {
+	z-index: 1001;
+}
+
+canvas.back {
+	z-index: 1;
+}
+
+.background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #D6D6D6;
+	z-index: 0;
+}
+
+.foreground {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-image: url("../media/images/block.png");
+	background-repeat: repeat;
+
+	/* INNER SHADOWS */
+	-moz-box-shadow: inset 0 0 100px 0 #959595;
+	-webkit-box-shadow: inset 0 0 100px 0 #959595;
+	box-shadow: inset 0 0 100px 0 #959595;
+
+	overflow: hidden;
+
+	z-index: 1000;
+}
+
+
+
+
+
+
+/* *DOORS */
+.module.doors { 
+	z-index: 5000;
+}
+
+.door {
+	position: fixed;
+	width: 100%;
+	height: 50%;
+	background-image: url('../media/images/body.gif');
+
+	box-shadow: 0px 2px 6px 7px #959595;
+	-moz-box-shadow: 0px 2px 6px 7px #959595;
+	-webkit-box-shadow: 0px 2px 6px 7px #959595;
+	-o-box-shadow: 0px 2px 6px 7px #959595;
+}
+
+.door.top {
+	left:0px; 
+	top:0px;
+	border-bottom: 2px solid #ffffff;
+	height: 40px;
+
+	z-index: 5002;
+}
+
+.door.bottom {
+	left: 0px;
+	bottom: 0px;
+	border-top: 2px solid #d5d5d5;
+	height: 40px;
+
+	z-index: 5001;
+}
+
+
+/* #MODULES */
+
+.modules.ui { /* the container */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+
+	z-index: 2000;
+}
+
+.module {
+	/*display: none; /* hide all modules at startup */
+}
+
+
+.module.doors, .module.cursors {
+	opacity: 1;
+}
+
+
+/* #CURSOR MODULE */
+
+.module.cursors {
+	z-index: 1500;
+}
+
+.cursor {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: -100px;
+	top: -100px;
+	background: none no-repeat left center;
+	background-image: url('../media/images/cursor.png');
+	background-position: -25px -25px;
+	overflow: none;
+	pointer-events:none;
+
+	z-index: 1501;
+}
+
+.cursor.click {
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	left: -100px;
+	top: -100px;
+	background: none no-repeat left center;
+	background-image: url('../media/images/cursor.png');
+	background-position: 0px 0px;
+
+	z-index: 1502;
+}
+
+
+/* #NAME MODULE */
+
+.module.name {
+	position: absolute;
+	top: 15%;
+	left: 400px;
+	width: 400px;
+	height: auto;
+
+	z-index: 2001;
+}
+
+.explore-icon {
+	width: 24px;
+	height: 24px;
+	left: -100px;
+	top: -100px;
+	background: none no-repeat left center;
+	background-image: url('../media/images/110.png');
+	background-size: 24px 24px;
+	/*background-position: -302px -142px;*/
+	overflow: none;
+}
+
+.explore span{
+	font-size: 18px;
+}
+
+
+/* #MAIN MODULE */
+
+.module.main-info {
+	position: absolute;
+	width: 800px;
+	height: 400px;
+	margin: 0px auto;
+}
+
+.module.main-info > div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.classes-info {
+	position: relative;
+	width: 350px;
+	height: auto;
+}
+
+.profile {
+	margin: 100px 200px 0 0;
+}
+
+.pinwheel-flat {
+	width: 500px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-image: url('../media/images/lateralPinwheel.gif');
+}
+
+
+
+.pinwheel {
+	top: 10%;
+	left: 0;
+	margin-left: -200px;
+	width: 504px;
+	height: 504px;
+	position: absolute;
+	background: none no-repeat left center;
+	background-image: url('../media/images/rotate.png');
+	background-position: 0px 0px;
+
+	z-index: 5000;
+}
+
+.hackathon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+
+
+
+
+
+
+.pixelation-wrap {
+	position: absolute;
+	top: 500px;
+	left: 400px;
+	width: 100px;
+	height: 100px;
+
+	background-color: #D6D6D6;
+
+	overflow: hidden;
+	z-index: 2000;
+}
+
+.pixels {
+	position: relative;
+	float: left;
+	width: 25px;
+	height: 25px;
+
+	background-image: url("../media/images/block.png");
+	
+	z-index: 2001;
+}
+
+
+
+

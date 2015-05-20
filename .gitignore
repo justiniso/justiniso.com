@@ -60,3 +60,7 @@ target/
 
 # Pycharm
 .idea/
+
+# Flask
+static/.webassets-cache
+static/gen/
