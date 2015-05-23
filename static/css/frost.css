@@ -271,10 +271,10 @@ canvas.back {
 /* #NAME MODULE */
 
 .module.name {
-	position: absolute;
-	top: 15%;
-	left: 400px;
-	width: 400px;
+	position: relative;
+	top: 20%;
+	margin: 0 auto;
+	width: 40%;
 	height: auto;
 
 	z-index: 2001;
