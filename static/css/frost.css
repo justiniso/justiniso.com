@@ -332,34 +332,6 @@ canvas.back {
 
 
 
-.pinwheel {
-	top: 10%;
-	left: 0;
-	margin-left: -200px;
-	width: 504px;
-	height: 504px;
-	position: absolute;
-	background: none no-repeat left center;
-	background-image: url('../media/images/rotate.png');
-	background-position: 0px 0px;
-
-	z-index: 5000;
-}
-
-.hackathon {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 999;
-}
-
-
-
-
-
-
-
 .pixelation-wrap {
 	position: absolute;
 	top: 500px;
@@ -382,6 +354,10 @@ canvas.back {
 	background-image: url("../media/images/block.png");
 	
 	z-index: 2001;
+}
+
+.strong {
+	font-weight: bold;
 }
 
 
